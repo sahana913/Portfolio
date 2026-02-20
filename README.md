@@ -104,7 +104,6 @@ portfolio/
 ## 📧 Contact Information
 
 - **Email**: sahanakr913@gmail.com
-- **Phone**: +91 8217831432
 - **LinkedIn**: [linkedin.com/in/sahana-kr-3a89a330b](https://www.linkedin.com/in/sahana-kr-3a89a330b)
 - **Location**: Bengaluru, India
 
