@@ -1034,7 +1034,7 @@ nav ul {
             }
 
             section {
-                padding: 4rem 0;
+                padding: 2rem 0; /* reduce vertical spacing on tiny screens */
             }
         }
 
@@ -1189,12 +1189,15 @@ nav ul {
 /* ===== HERO SECTION ===== */
 
 .hero-section {
-    min-height: 100vh;
+    /* take nav height into account and avoid excessive vertical centering */
+    min-height: calc(100vh - 80px);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 80px; /* space for fixed navbar */
     background: var(--bg-color);
     position: relative;
 }
+
 
 .hero-container {
     width: 100%;
