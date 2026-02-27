@@ -16,6 +16,13 @@
             box-sizing: border-box;
         }
 
+        /* ensure no horizontal scrollbar and full-width layout */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
         :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
@@ -986,7 +993,7 @@ nav ul {
 
         @media (max-width: 640px) {
             .container {
-                padding: 0 1rem;
+                padding: 0; /* remove side padding on very small screens */
             }
 
             .hero-text h1 {
