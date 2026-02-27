@@ -928,6 +928,10 @@ nav ul {
 
         /* Responsive Design */
         @media (max-width: 968px) {
+            .container {
+                padding: 0 1rem; /* reduce side padding earlier */
+            }
+
             .hero-content,
             .about-content {
                 grid-template-columns: 1fr;
@@ -978,6 +982,10 @@ nav ul {
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem; /* even tighter at mid-size phones */
+            }
+
             .contact-container {
                 grid-template-columns: 1fr;
             }
