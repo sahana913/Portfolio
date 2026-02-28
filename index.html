@@ -291,7 +291,7 @@ nav ul {
 
         /* Section Styles */
         section {
-            padding: 6rem 0;
+            padding: 4rem 0; /* reduced global section vertical padding */
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease forwards;
@@ -322,22 +322,25 @@ nav ul {
         /* About Section */
         .about-section {
             background: var(--bg-color);
-            padding-top: 3.5rem;
+            padding-top: 1.5rem; /* reduce top whitespace specifically for About */
+            padding-bottom: 2rem;
         }
 
         .about-container {
             max-width: 900px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
         }
 
         .about-heading {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem; /* tighter heading spacing */
         }
 
         .about-subtitle {
             font-size: 0.95rem;
             color: var(--text-secondary);
-            margin-top: 0.35rem;
+            margin-top: 0.25rem;
         }
 
         .about-content {
@@ -346,17 +349,17 @@ nav ul {
         }
         
         .about-text {
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.6; /* slightly tighter for compact layout */
         }
 
         .about-text p {
-            margin-bottom: 1.1rem;
+            margin-bottom: 0.8rem;
         }
 
         .about-actions {
-            margin-top: 1.75rem;
+            margin-top: 1rem;
         }
 
         .resume-btn {
@@ -1013,7 +1016,7 @@ nav ul {
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .stats-grid {
@@ -1034,7 +1037,14 @@ nav ul {
             }
 
             section {
-                padding: 3rem 0; /* restore more vertical space */
+                padding: 2rem 0; /* tighter vertical spacing on small phones */
+            }
+            .about-heading {
+                margin-bottom: 0.6rem; /* slightly tighter on very small screens */
+            }
+            .about-text {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
         }
 
