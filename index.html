@@ -1549,18 +1549,21 @@ nav ul {
                     title: 'Bank Forecast Assistant',
                     description: 'AI-based banking forecast assistant using Python with Ollama agent integration for intelligent financial predictions and analysis.',
                     tech: ['Python', 'AI', 'Ollama', 'Machine Learning'],
+                    liveDemo: 'https://banking-forecast-assistant-suntkyjrchvmq5xaawnr6u.streamlit.app/',
                     icon: '🤖'
                 },
                 {
-                    title: 'Car E-Commerce Website',
-                    description: 'Responsive car sales web application with modern UI/UX, featuring product listings, search functionality, and seamless user experience.',
-                    tech: ['React.js', 'Node.js', 'JavaScript', 'CSS'],
+                    title: 'AI-Powered HRMS',
+                    description: 'Enterprise AI Human Resource Management System that automates recruitment, ATS resume screening, candidate ranking, employee onboarding, attendance, leave management, payroll, and HR analytics using Machine Learning and Generative AI.',
+                    tech: ['React.js', 'FastAPI', 'Python', 'MongoDB', 'AI/ML', 'LLM', 'AWS'],
+                    liveDemo: 'https://ai-hrms-enterprise.vercel.app',
                     icon: '🚗'
                 },
                 {
-                    title: 'Student Information Portal',
-                    description: 'Student data management portal for efficient record handling, featuring CRUD operations and intuitive interface.',
-                    tech: ['PHP', 'MySQL', 'HTML', 'CSS'],
+                    title: 'AI Software Program Manager',
+                    description: 'Enterprise AI platform that predicts project risks, calculates Project Health Score, generates executive reports, performs semantic document search, integrates with Jira and Azure DevOps, and provides real-time analytics using Generative AI.',
+                    tech: ['React.js', 'FastAPI', 'Python', 'AWS', 'Bedrock', 'OpenSearch', 'DynamoDB'],
+                    liveDemo: 'https://d3b7m0kcuo60g.cloudfront.net/dashboard',
                     icon: '📚'
                 },
                 {
@@ -1854,9 +1857,11 @@ nav ul {
                                 Featured <span className="gradient-text">Projects</span>
                             </h2>
                             <div className="projects-grid">
-                                {projects.map((project, index) => (
+                                {projects.filter(project => project.title !== 'Library Management System').map((project, index) => (
                                     <div key={index} className="project-card">
-                                        <div className="project-icon">{project.icon}</div>
+                                        <div className="project-icon">
+                                            {project.title === 'Bank Forecast Assistant' ? 'AI' : project.title === 'AI-Powered HRMS' ? 'HR' : 'PM'}
+                                        </div>
                                         <div className="project-content">
                                             <h3 className="project-title">{project.title}</h3>
                                             <p className="project-description">{project.description}</p>
@@ -1865,6 +1870,32 @@ nav ul {
                                                     <span key={tech} className="tech-badge">{tech}</span>
                                                 ))}
                                             </div>
+                                            {(project.liveDemo || project.source) && (
+                                                <div style={{ marginTop: '1rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                                                    {project.liveDemo && (
+                                                        <a
+                                                            href={project.liveDemo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-primary"
+                                                        >
+                                                            <i className="fas fa-external-link-alt"></i>
+                                                            &nbsp;Live Demo
+                                                        </a>
+                                                    )}
+                                                    {project.source && (
+                                                        <a
+                                                            href={project.source}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-secondary"
+                                                        >
+                                                            <i className="fas fa-code-branch"></i>
+                                                            &nbsp;Source
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
