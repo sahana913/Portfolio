@@ -1571,6 +1571,7 @@ nav ul {
                     description: 'AI-based banking forecast assistant using Python with Ollama agent integration for intelligent financial predictions and analysis.',
                     tech: ['Python', 'AI', 'Ollama', 'Machine Learning'],
                     liveDemo: 'https://banking-forecast-assistant-suntkyjrchvmq5xaawnr6u.streamlit.app/',
+                    iconClass: 'fas fa-robot',
                     icon: '🤖'
                 },
                 {
@@ -1578,6 +1579,7 @@ nav ul {
                     description: 'Enterprise AI Human Resource Management System that automates recruitment, ATS resume screening, candidate ranking, employee onboarding, attendance, leave management, payroll, and HR analytics using Machine Learning and Generative AI.',
                     tech: ['React.js', 'FastAPI', 'Python', 'MongoDB', 'AI/ML', 'LLM', 'AWS'],
                     liveDemo: 'https://ai-hrms-enterprise.vercel.app',
+                    iconClass: 'fas fa-user-tie',
                     icon: '🚗'
                 },
                 {
@@ -1585,6 +1587,7 @@ nav ul {
                     description: 'Enterprise AI platform that predicts project risks, calculates Project Health Score, generates executive reports, performs semantic document search, integrates with Jira and Azure DevOps, and provides real-time analytics using Generative AI.',
                     tech: ['React.js', 'FastAPI', 'Python', 'AWS', 'Bedrock', 'OpenSearch', 'DynamoDB'],
                     liveDemo: 'https://d3b7m0kcuo60g.cloudfront.net/dashboard',
+                    iconClass: 'fas fa-chart-pie',
                     icon: '📚'
                 },
                 {
@@ -1881,13 +1884,7 @@ nav ul {
                                 {projects.filter(project => project.title !== 'Library Management System').map((project, index) => (
                                     <div key={index} className="project-card">
                                         <div className="project-icon">
-                                            <i className={
-                                                project.title === 'Bank Forecast Assistant'
-                                                    ? 'fas fa-chart-line'
-                                                    : project.title === 'AI-Powered HRMS'
-                                                        ? 'fas fa-users-gear'
-                                                        : 'fas fa-diagram-project'
-                                            }></i>
+                                            <i className={project.iconClass}></i>
                                         </div>
                                         <div className="project-content">
                                             <h3 className="project-title">{project.title}</h3>
