@@ -536,8 +536,10 @@ nav ul {
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: minmax(0, 1fr);
             gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .project-card {
@@ -547,7 +549,7 @@ nav ul {
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
             display: flex;
-            flex-direction: column;
+            align-items: stretch;
             color: var(--text-primary);
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
         }
@@ -560,11 +562,19 @@ nav ul {
 
         .project-icon {
             background: var(--gradient);
-            padding: 3rem;
+            width: 190px;
+            min-height: 100%;
+            padding: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .project-icon i {
+            color: #ffffff;
         }
 
         .project-content {
@@ -586,6 +596,17 @@ nav ul {
             margin-bottom: 1.5rem;
             line-height: 1.6;
             flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-icon {
+                width: 100%;
+                min-height: 160px;
+            }
         }
 
         .project-tech {
@@ -1860,7 +1881,13 @@ nav ul {
                                 {projects.filter(project => project.title !== 'Library Management System').map((project, index) => (
                                     <div key={index} className="project-card">
                                         <div className="project-icon">
-                                            {project.title === 'Bank Forecast Assistant' ? 'AI' : project.title === 'AI-Powered HRMS' ? 'HR' : 'PM'}
+                                            <i className={
+                                                project.title === 'Bank Forecast Assistant'
+                                                    ? 'fas fa-chart-line'
+                                                    : project.title === 'AI-Powered HRMS'
+                                                        ? 'fas fa-users-gear'
+                                                        : 'fas fa-diagram-project'
+                                            }></i>
                                         </div>
                                         <div className="project-content">
                                             <h3 className="project-title">{project.title}</h3>
